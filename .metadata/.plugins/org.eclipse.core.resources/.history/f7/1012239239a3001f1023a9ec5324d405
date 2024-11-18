@@ -1,0 +1,34 @@
+package StreamAPI;
+
+import java.util.stream.Stream;
+
+public class CountEachCharacterInSingleString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+String str ="Hello World";
+String strlower = str.toLowerCase();
+String chars = strlower.toCharArray();
+       
+	}
+
+}
+
+
+
+//
+//Write a Java program that takes a string as input, uses the Stream API to count the occurrences 
+// of each character, and stores the result in a Map<Character, Long>.
+//
+//Input as : 
+//Hello World
+//Expected Output:
+//Character counts:
+//h: 1
+//e: 1
+//l: 3
+//o: 2
+// : 1
+//w: 1
+//r: 1
+//d: 1

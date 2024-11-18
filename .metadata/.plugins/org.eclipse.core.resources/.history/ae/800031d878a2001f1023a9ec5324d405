@@ -1,0 +1,17 @@
+package StreamAPI;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class StudentEnrolled {
+	public static void main(String[] args) {
+		
+		Stream.of("Alice : Java", "Bob : Python",
+		                           "Charlie : Java",
+		                           "David : C++",
+		                           "Eve : JavaScript");
+		List<String> list= new ArrayList<>();
+		                        		   }
+
+}

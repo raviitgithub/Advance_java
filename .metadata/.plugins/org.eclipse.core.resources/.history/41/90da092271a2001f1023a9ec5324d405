@@ -1,0 +1,10 @@
+package StreamAPI;
+
+public class ConcateStringbySkipspaces {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,34 @@
+package Collecctions;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+public class StudentDetails {
+	public Map<Integer, String> getStudentDetails(List<String> encryptedList) {
+		Map<Integer, String> result = new LinkedHashMap<Integer, String>();
+		for (String encrptinfo : encryptedList) {
+			int id = 0;
+			String str = null;
+			for (char ch : encrptinfo.toCharArray()) {
+				if (Character.isDigit(ch)) {
+					id = id + Character.getNumericValue(ch);
+				} else if (Character.isLetter(ch))
+				{
+				str += ch;
+			}
+
+		}
+		}
+		return result;
+	}
+
+	public static void main(String[] args) {
+		List<String> res = List.of( "Ra26j2a6", "A33ru7n8", "R0o87hi2t", "A7n9k2i1t" );
+		StudentDetails sd = new StudentDetails();
+		Map<Integer, String> res = sd.getStudentDetails(names);
+		System.out.println(result);
+
+	}
+
+}

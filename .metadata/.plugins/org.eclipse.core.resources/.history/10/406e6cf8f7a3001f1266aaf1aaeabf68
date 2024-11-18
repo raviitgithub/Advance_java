@@ -1,0 +1,13 @@
+package Jdbc_APP;
+
+
+
+public interface DBInfo {
+public static String driver ="orale.jdbc.driver.OracleDriver";
+public static String path="jdbc:oracld:thin:@localhost";
+public static String name="system";
+public static String pass="root";
+
+	
+}
+	

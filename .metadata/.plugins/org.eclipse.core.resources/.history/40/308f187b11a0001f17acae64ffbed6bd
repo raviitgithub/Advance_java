@@ -1,0 +1,10 @@
+package PreparedStatement;
+
+public class AdvanceJavaProgramOnRegistration {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

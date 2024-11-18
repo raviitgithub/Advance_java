@@ -1,0 +1,42 @@
+package StreamAPI;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class CountAndPrintOnlyDuplicatesValues {
+
+	public static void main(String[] args) {
+		List<Integer> numbers=Arrays.asList(1, 2, 3, 4, 2, 5, 1, 6, 7, 3) ;
+		
+		//List<Integer> list = new ArrayList<Integer>();
+		for(Integer num:numbers) {
+		      
+		       
+	}
+
+		}
+}
+
+//Write a Java program that takes a list of integers as input, uses the Stream API to find and print all duplicate elements along with their counts.
+//Input as : 
+//List<Integer> numbers = [1, 2, 3, 4, 2, 5, 1, 6, 7, 3];
+//Expected Output:
+//Duplicate elements:
+//1 (count: 2)
+//2 (count: 2)
+//3 (count: 2)
+//import java.util.*;
+//import java.util.stream.Collectors;
+//
+//public class DuplicateFinder {
+//	public static void main(String[] args) {
+//		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 2, 5, 1, 6, 7, 3);
+//
+//		Map<Integer, Long> counts = numbers.stream().collect(Collectors.groupingBy(n -> n, Collectors.counting()));
+//
+//		System.out.println("Duplicate elements:");
+//		counts.entrySet().stream().filter(entry -> entry.getValue() > 1)
+//				.forEach(entry -> System.out.println(entry.getKey() + " (count: " + entry.getValue() + ")"));
+//	}
+//}

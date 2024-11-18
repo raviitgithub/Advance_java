@@ -1,0 +1,13 @@
+package StreamAPI;
+
+import java.util.stream.Stream;
+
+public class NamesInLexicographicalOrder {
+
+	public static void main(String[] args) {
+     
+		Stream.of("Toby", "Anna", "Leroy", "Alex","Ahdhdu").sorted().limit(5).forEach(System.out::println);
+
+	 }
+
+}

@@ -1,0 +1,9 @@
+package jdbcPreparedStatement;
+
+public interface DBinfo {
+String driver = "oracle.jdbc.driver.OracleDriver";
+String path = "jdbc:oracle:thin:@localhost:1521:orcl";
+String user = "system";
+String pass = "root";
+
+}
