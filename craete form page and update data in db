@@ -1,4 +1,10 @@
-<%@ page import="java.sql.*" %>
+
+==========================================================================================================================================================================
+=======================================================   Data Base ====================================================================
+
+
+==========================================================================================================================================================================
+=======================================================1️⃣ search.jsp =======================================================================<%@ page import="java.sql.*" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <html>
 <head><title>Search Record</title></head>
@@ -35,6 +41,13 @@ if (id != null && !id.trim().isEmpty()) {
                 Tested By: <input type="text" name="user_test_by" required><br><br>
                 Test Date: <input type="date" name="user_test_date" required><br><br>
                 Remarks: <textarea name="remarks"></textarea><br><br>
+                Approval: 
+                <select name="user_test_approvel" required>
+                    <option value="">--Select--</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Pending">Pending</option>
+                </select><br><br>
                 <input type="submit" value="Save Details">
             </form>
 <%
@@ -52,7 +65,8 @@ if (id != null && !id.trim().isEmpty()) {
 %>
 </body>
 </html>
-================================================================================================================================================
+==========================================================================================================================================================================
+=======================================================2️⃣ save.jsp ============================================================================
 <%@ page import="java.sql.*" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <html>
@@ -63,20 +77,22 @@ String id = request.getParameter("id");
 String userTestBy = request.getParameter("user_test_by");
 String userTestDate = request.getParameter("user_test_date");
 String remarks = request.getParameter("remarks");
+String approvel = request.getParameter("user_test_approvel");
 
-if (id != null && userTestBy != null && userTestDate != null) {
+if (id != null && userTestBy != null && userTestDate != null && approvel != null) {
     Connection con = null;
     PreparedStatement ps = null;
     try {
         Class.forName("oracle.jdbc.driver.OracleDriver");
         con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "your_username", "your_password");
 
-        String sql = "UPDATE my_table SET user_test_by=?, user_test_date=?, remarks=? WHERE id=?";
+        String sql = "UPDATE my_table SET user_test_by=?, user_test_date=?, remarks=?, user_test_approvel=? WHERE id=?";
         ps = con.prepareStatement(sql);
         ps.setString(1, userTestBy);
         ps.setDate(2, java.sql.Date.valueOf(userTestDate));
         ps.setString(3, remarks);
-        ps.setInt(4, Integer.parseInt(id));
+        ps.setString(4, approvel);
+        ps.setInt(5, Integer.parseInt(id));
 
         int updated = ps.executeUpdate();
         if (updated > 0) {
@@ -96,11 +112,14 @@ if (id != null && userTestBy != null && userTestDate != null) {
 %>
 </body>
 </html>
-================================================================================================================================================CREATE TABLE my_table (
+==========================================================================================================================================================================
+=======================================================3️⃣ success.jsp  ====================================================================
+CREATE TABLE my_table (
     id NUMBER(5) PRIMARY KEY,
     name VARCHAR2(50),
     description VARCHAR2(100),
     user_test_by VARCHAR2(50),
     user_test_date DATE,
-    remarks VARCHAR2(200)
+    remarks VARCHAR2(200),
+    user_test_approvel VARCHAR2(20)
 );
